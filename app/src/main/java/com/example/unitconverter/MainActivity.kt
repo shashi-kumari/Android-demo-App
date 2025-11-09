@@ -23,6 +23,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -113,7 +114,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Unit Converter",
+            text = "Unit Converter", style = MaterialTheme.typography.headlineLarge
         )
         Spacer(modifier = Modifier.padding(10.0.dp))
         OutlinedTextField(
@@ -325,8 +326,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         Spacer(modifier = Modifier.padding(10.0.dp))
 
         Text(
-            "Result: " + (inputValue.toDoubleOrNull()?.let { it * conversionFactor }?.toString()
-                ?: "Invalid input")
+            "Result: " + (inputValue.toDoubleOrNull()?.let { it * conversionFactor  }?.toString() +" "+ outputUnit
+                ?: "Invalid input"), style = MaterialTheme.typography.headlineMedium
         )
     }
 }
